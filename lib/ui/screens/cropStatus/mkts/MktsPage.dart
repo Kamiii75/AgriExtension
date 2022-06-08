@@ -1,27 +1,28 @@
 import 'package:app/core/constants/constants.dart';
 import 'package:app/core/models/cardModel.dart';
+import 'package:app/ui/screens/cropStatus/ipm/ipmPage.dart';
+import 'package:app/ui/screens/cropStatus/mkts/mktsList/mktsListPage.dart';
+import 'package:app/ui/screens/cropStatus/mkts/vChain/vChainPage.dart';
 import 'package:app/ui/screens/pocketAreas/pocketAreasPage.dart';
+import 'package:app/ui/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import '../../widgets/main_card.dart';
-import '../cropStatus/cropStatusPage.dart';
-import '../services/servicesPage.dart';
-import '../weather/weatherPage.dart';
-import 'detailDistrictsVM.dart';
 
-class DetailDistrictPage extends StatelessWidget {
+import 'MktsVM.dart';
+
+class MktsPage extends StatelessWidget {
   final CardModel cardModel;
 
-  const DetailDistrictPage({Key? key, required this.cardModel})
+  const MktsPage({Key? key, required this.cardModel})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return ChangeNotifierProvider(
-      create: (context) => DetailDistrictProvider(), child:
-    Consumer<DetailDistrictProvider>(
+      create: (context) => MktsProvider(), child:
+    Consumer<MktsProvider>(
         builder: (context, detail, child) {
           return Scaffold(
 
@@ -104,22 +105,19 @@ class DetailDistrictPage extends StatelessWidget {
                                   const Duration(milliseconds: 500),
                                   pageBuilder: (context, animation,
                                       secondaryAnimation) =>
-                                      FadeTransition(
+                                     FadeTransition(
                                         opacity: animation,
-                                        child:index==0? PocketAreasPage(
+                                        child: index==0? MktsListPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ):index==1?WeatherPage(
+                                        ):index==1?VChainPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ):index==2?CropStatusPage(
+                                        ):IpmPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ):ServicesPage(
-                                          cardModel: detail.cardModel[index],
-
-                                        ),
-                                      ),
+                                        )
+                                ),
                                 ),
                               );
                             },

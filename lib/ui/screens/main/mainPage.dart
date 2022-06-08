@@ -21,7 +21,7 @@ class MainPage extends StatelessWidget {
           gradient: gradient,
         ),
           child: GridView.builder(
-            itemCount: main.district.length,
+            itemCount: main.cardModel.length,
             gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(
 
@@ -32,7 +32,7 @@ class MainPage extends StatelessWidget {
             ),
             itemBuilder: (context, index) =>
                 MainCard(
-                  district: main.district[index],
+                  cardModel: main.cardModel[index],
                   press: () {
                     Navigator.push(
                       context,
@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                             FadeTransition(
                               opacity: animation,
                               child: DetailDistrictPage(
-                                district: main.district[index],
+                                cardModel: main.cardModel[index],
 
                               ),
                             ),

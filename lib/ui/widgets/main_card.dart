@@ -1,10 +1,9 @@
 
-import 'package:app/ui/screens/home/components/price.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/constants.dart';
-import '../../core/models/districtModel.dart';
+import '../../core/models/cardModel.dart';
 
 
 
@@ -12,11 +11,11 @@ import '../../core/models/districtModel.dart';
 class MainCard extends StatelessWidget {
   const MainCard({
     Key? key,
-    required this.district,
+    required this.cardModel,
     required this.press,
   }) : super(key: key);
 
-  final DistrictModel district;
+  final CardModel cardModel;
 
   final VoidCallback press;
 
@@ -39,8 +38,8 @@ class MainCard extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Hero(
-                tag: district.title!,
-                child: Image.asset(district.image!),
+                tag: cardModel.title!,
+                child: Image.asset(cardModel.image!),
               ),
             ),
             Expanded(
@@ -48,7 +47,7 @@ class MainCard extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: Text(
-                  district.title!,
+                  cardModel.title!,
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme

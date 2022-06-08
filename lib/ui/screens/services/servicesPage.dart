@@ -1,27 +1,26 @@
 import 'package:app/core/constants/constants.dart';
 import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/screens/pocketAreas/pocketAreasPage.dart';
+import 'package:app/ui/screens/services/credit/creditPage.dart';
+import 'package:app/ui/screens/services/extension/extensionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import '../../widgets/main_card.dart';
-import '../cropStatus/cropStatusPage.dart';
-import '../services/servicesPage.dart';
-import '../weather/weatherPage.dart';
-import 'detailDistrictsVM.dart';
 
-class DetailDistrictPage extends StatelessWidget {
+import '../../widgets/main_card.dart';
+import 'servicesVM.dart';
+
+class ServicesPage extends StatelessWidget {
   final CardModel cardModel;
 
-  const DetailDistrictPage({Key? key, required this.cardModel})
+  const ServicesPage({Key? key, required this.cardModel})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return ChangeNotifierProvider(
-      create: (context) => DetailDistrictProvider(), child:
-    Consumer<DetailDistrictProvider>(
+      create: (context) => ServicesProvider(), child:
+    Consumer<ServicesProvider>(
         builder: (context, detail, child) {
           return Scaffold(
 
@@ -104,22 +103,18 @@ class DetailDistrictPage extends StatelessWidget {
                                   const Duration(milliseconds: 500),
                                   pageBuilder: (context, animation,
                                       secondaryAnimation) =>
-                                      FadeTransition(
-                                        opacity: animation,
-                                        child:index==0? PocketAreasPage(
-                                          cardModel: detail.cardModel[index],
+                                 FadeTransition(
+                                    opacity: animation,
+                                    child:
 
-                                        ):index==1?WeatherPage(
-                                          cardModel: detail.cardModel[index],
+                                    index==2?ExtensionPage(
+                                      cardModel: detail.cardModel[index],
 
-                                        ):index==2?CropStatusPage(
-                                          cardModel: detail.cardModel[index],
+                                    ):CreditPage(
+                                      cardModel: detail.cardModel[index],
 
-                                        ):ServicesPage(
-                                          cardModel: detail.cardModel[index],
-
-                                        ),
-                                      ),
+                                    ),
+                                  )
                                 ),
                               );
                             },

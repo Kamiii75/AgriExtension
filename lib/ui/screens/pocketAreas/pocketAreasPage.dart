@@ -1,12 +1,12 @@
-import 'package:app/core/constants/constants.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/screens/pocketAreas/area/areasPage.dart';
-import 'package:app/ui/screens/pocketAreas/yield/yieldPage.dart';
-import 'package:app/ui/widgets/main_card.dart';
+import 'package:agri_app/core/constants/constants.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/screens/pocketAreas/tomato/tomatoPage.dart';
+import 'package:agri_app/ui/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import 'onion/onionPage.dart';
 import 'pocketAreasVM.dart';
 
 class PocketAreasPage extends StatelessWidget {
@@ -105,10 +105,10 @@ class PocketAreasPage extends StatelessWidget {
                                       secondaryAnimation) =>
                                       FadeTransition(
                                         opacity: animation,
-                                        child:index==0? AreasPage(
+                                        child:index==0? TomatoPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ) :YieldPage(
+                                        ) :OnionPage(
                                           cardModel: detail.cardModel[index],
 
                                         ),

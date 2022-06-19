@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:app/core/constants/styles.dart';
-import 'package:app/core/utils/locator.dart';
-import 'package:app/core/utils/shared_preference_services.dart';
+import 'package:agri_app/core/constants/styles.dart';
+import 'package:agri_app/core/utils/locator.dart';
+import 'package:agri_app/core/utils/shared_preference_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

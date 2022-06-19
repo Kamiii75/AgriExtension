@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:async';
-import 'package:app/core/utils/language_services.dart';
-import 'package:app/core/utils/locator.dart';
-import 'package:app/ui/screens/main/mainPage.dart';
-import 'package:app/ui/screens/weather/service/get_location_data.dart';
-import 'package:app/ui/screens/weather/service/get_weather_data.dart';
+import 'package:agri_app/core/utils/language_services.dart';
+import 'package:agri_app/core/utils/locator.dart';
+import 'package:agri_app/ui/screens/main/mainPage.dart';
+import 'package:agri_app/ui/screens/weather/service/get_location_data.dart';
+import 'package:agri_app/ui/screens/weather/service/get_weather_data.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:get/get.dart';

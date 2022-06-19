@@ -1,8 +1,8 @@
-import 'package:app/core/constants/styles.dart';
-import 'package:app/ui/screens/detailDistricts/detailDistrictsPage.dart';
-import 'package:app/ui/screens/main/mainVM.dart';
-import 'package:app/ui/screens/weather/service/get_location_data.dart';
-import 'package:app/ui/widgets/main_card.dart';
+import 'package:agri_app/core/constants/styles.dart';
+import 'package:agri_app/ui/screens/detailDistricts/detailDistrictsPage.dart';
+import 'package:agri_app/ui/screens/main/mainVM.dart';
+import 'package:agri_app/ui/screens/weather/service/get_location_data.dart';
+import 'package:agri_app/ui/widgets/main_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

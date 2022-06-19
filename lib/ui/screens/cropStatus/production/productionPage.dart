@@ -1,6 +1,6 @@
-import 'package:app/core/constants/constants.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/widgets/main_card.dart';
+import 'package:agri_app/core/constants/constants.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

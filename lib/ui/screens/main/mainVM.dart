@@ -1,9 +1,9 @@
-import 'package:app/core/enums/view_state.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/core/utils/base_view_model.dart';
-import 'package:app/core/utils/language_services.dart';
-import 'package:app/core/utils/locator.dart';
-import 'package:app/core/utils/shared_preference_services.dart';
+import 'package:agri_app/core/enums/view_state.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/core/utils/base_view_model.dart';
+import 'package:agri_app/core/utils/language_services.dart';
+import 'package:agri_app/core/utils/locator.dart';
+import 'package:agri_app/core/utils/shared_preference_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

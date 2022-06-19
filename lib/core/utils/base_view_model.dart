@@ -1,4 +1,4 @@
-import 'package:app/core/enums/view_state.dart';
+import 'package:agri_app/core/enums/view_state.dart';
 import 'package:flutter/foundation.dart';
 
 

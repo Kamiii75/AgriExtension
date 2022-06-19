@@ -4,7 +4,9 @@ import '../../../core/models/cardModel.dart';
 
 class DetailDistrictProvider extends ChangeNotifier{
 
-
+  DetailDistrictProvider(){
+    setList();
+  }
 
   List<CardModel> get cardModel=>_cardModel;
   setList(){

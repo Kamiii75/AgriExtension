@@ -1,9 +1,9 @@
-import 'package:app/core/utils/locator.dart';
-import 'package:app/ui/screens/main/mainPage.dart';
-import 'package:app/ui/screens/main/mainVM.dart';
-import 'package:app/ui/screens/splash/splash_page.dart';
-import 'package:app/ui/screens/weather/service/get_location_data.dart';
-import 'package:app/ui/screens/weather/service/get_weather_data.dart';
+import 'package:agri_app/core/utils/locator.dart';
+import 'package:agri_app/ui/screens/main/mainPage.dart';
+import 'package:agri_app/ui/screens/main/mainVM.dart';
+import 'package:agri_app/ui/screens/splash/splash_page.dart';
+import 'package:agri_app/ui/screens/weather/service/get_location_data.dart';
+import 'package:agri_app/ui/screens/weather/service/get_weather_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

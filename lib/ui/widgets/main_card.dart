@@ -38,8 +38,8 @@ class MainCard extends StatelessWidget {
             Expanded(
               flex: 5,
               child: Hero(
-                tag: cardModel.title!,
-                child: Image.asset(cardModel.image!),
+                tag: cardModel.title,
+                child: Image.asset(cardModel.image),
               ),
             ),
             Expanded(
@@ -47,7 +47,7 @@ class MainCard extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 child: Text(
-                  cardModel.title!,
+                  cardModel.title,
                   textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme

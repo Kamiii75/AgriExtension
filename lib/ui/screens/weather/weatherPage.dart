@@ -1,9 +1,9 @@
-import 'package:app/core/constants/constants.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/screens/main/mainVM.dart';
-import 'package:app/ui/screens/weather/service/get_location_data.dart';
-import 'package:app/ui/screens/weather/service/get_weather_data.dart';
-import 'package:app/ui/widgets/dashboard_weather_card.dart';
+import 'package:agri_app/core/constants/constants.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/screens/main/mainVM.dart';
+import 'package:agri_app/ui/screens/weather/service/get_location_data.dart';
+import 'package:agri_app/ui/screens/weather/service/get_weather_data.dart';
+import 'package:agri_app/ui/widgets/dashboard_weather_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

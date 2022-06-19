@@ -1,8 +1,8 @@
-import 'package:app/core/constants/constants.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/screens/cropStatus/ipm/ipmPage.dart';
-import 'package:app/ui/screens/cropStatus/mkts/MktsPage.dart';
-import 'package:app/ui/screens/cropStatus/production/productionPage.dart';
+import 'package:agri_app/core/constants/constants.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/screens/cropStatus/ipm/ipmPage.dart';
+import 'package:agri_app/ui/screens/cropStatus/mkts/MktsPage.dart';
+import 'package:agri_app/ui/screens/cropStatus/production/productionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

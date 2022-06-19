@@ -1,6 +1,6 @@
-import 'package:app/core/constants/constants.dart';
-import 'package:app/core/models/cardModel.dart';
-import 'package:app/ui/screens/pocketAreas/pocketAreasPage.dart';
+import 'package:agri_app/core/constants/constants.dart';
+import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/screens/pocketAreas/pocketAreasPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -88,6 +88,7 @@ class DetailDistrictPage extends StatelessWidget {
 
                         crossAxisCount: 2,
                         childAspectRatio: 0.75,
+
                         mainAxisSpacing: defaultPadding,
                         crossAxisSpacing: defaultPadding,
                       ),

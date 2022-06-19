@@ -5,104 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../widgets/expandedTile.dart';
 import 'areasVM.dart';
 
 
-class AreasTomatoPage extends StatefulWidget {
+class AreasTomatoPage extends StatelessWidget {
   final CardModel cardModel;
 
   const AreasTomatoPage({Key? key, required this.cardModel})
       : super(key: key);
 
-  @override
-  State<AreasTomatoPage> createState() => _AreasTomatoPageState();
-}
-
-class _AreasTomatoPageState extends State<AreasTomatoPage> {
-  bool firstExpanded=false;
-  String? selectedValue;
-  List<String> items = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-  ];
-  List<List<String>> tableData = [
-    [
-      "Date/Time",
-      "TRANSACTION\nID",
-      "TRANSACTION\nDESCRIPTION",
-      "DEBIT",
-      "CREDIT",
-      "Available \nBalance",
-      "status"
-    ],
-    [
-      "20/03/2022 \n11:43  PM",
-      "9999999999",
-      "Opening \nBalance",
-      "0000000.00",
-      "0000000.00",
-      "0000000.00",
-      "Executed"
-    ],
-    [
-      "20/03/2022 \n11:43 PM",
-      "9999999999",
-      "New Account",
-      "0000000.00",
-      "0000000.00",
-      "0000000.00",
-      "Executed"
-    ],
-    [
-      "30/03/2022 \n04:07 PM",
-      "9999999999",
-      "Closing \nBalance",
-      "0000000.00",
-      "0000000.00",
-      "0000000.00",
-      "Executed"
-    ],
-  ];
 
 
 
-  List<Widget> _buildCells(List<String> data,bool isHeader,int count) {
-
-    return List.generate(
-      count,
-          (index) => Container(
-
-        color: Colors.black,
-        child: Container(
-          alignment: Alignment.center,
-          width: 120.0,
-          height: 60.0,
-          color: isHeader?Colors.amber:Colors.white,
-          margin: EdgeInsets.all(2.0),
-          child: Center(child: Text("${data[index]}")),
-        ),
-      ),
-    );
-  }
-
-  List<Widget> _buildRows(int count,List<List<String>> tableData) {
-
-    return List.generate(
-      count,
-          (index) => Row(
-        children: _buildCells(tableData[index],index==0,tableData[index].length),
-      ),
-    );
-  }
-  @override
+ @override
   Widget build(BuildContext context) {
 
 
@@ -132,7 +48,7 @@ class _AreasTomatoPageState extends State<AreasTomatoPage> {
 
 
                       title: Text(
-                        widget.cardModel.title,
+                        cardModel.title,
                         style: Theme.of(context)
                             .textTheme
                             .subtitle1!
@@ -153,8 +69,8 @@ class _AreasTomatoPageState extends State<AreasTomatoPage> {
                           width: double.infinity,
 
                           child: Hero(
-                            tag: widget.cardModel.title,
-                            child: Image.asset(widget.cardModel.image),
+                            tag: cardModel.title,
+                            child: Image.asset(cardModel.image),
                           ),
                         ),
 
@@ -164,81 +80,90 @@ class _AreasTomatoPageState extends State<AreasTomatoPage> {
                   ),
                 Expanded(
                   flex: 12,
-                  child: Container(
-                    padding: EdgeInsets.all(20.h),
+                  child: SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.all(20.h),
 
 
-                    child: Column(children: [
+                      child: Column(children: [
 
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            firstExpanded = !firstExpanded;
-                          });
-                        },
-                        child: Container(
-                          height: 50,
-                          color:  Colors.grey,
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 50,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: new Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    new Flexible(
-                                      child: Text(
-                                        "Specific Account - Statement",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      ),
-                                      flex: 4,
-                                    ),
-                                    new Flexible(
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            child: firstExpanded
-                                                ? Icon(Icons.edit_outlined, size: 20)
-                                                : SizedBox(width: 20),
-                                          ),
-                                          SizedBox(width: 20),
-                                          Icon(
-                                              firstExpanded
-                                                  ? Icons.keyboard_arrow_up_outlined
-                                                  : Icons.keyboard_arrow_down_outlined,
-                                              size: 25),
-                                        ],
-                                      ),
-                                      flex: 1,
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            detail.toggleDescExpanded();
+                          },
+
+                          child: ExpandedTile(title:"Description" ,isExp: detail.descExpanded,),
                         ),
-                      ),
-                      SizedBox(height: 10),
-                      Visibility(
-                          visible: firstExpanded,
-                          child:  SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: _buildRows(tableData.length,tableData),
-                              ),
-                            ),
+                        SizedBox(height: 10.h),
+                        Visibility(
+                          visible: detail.descExpanded,
+                          child:  Container(
+                            height: detail.descList.length*60,
+                            child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                // shrinkWrap: true,
+                                itemCount: detail.descList.length,
+                                itemBuilder: (context, index) => Padding(
+                                  padding: EdgeInsets.all(5.h),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(color:Colors.blueGrey, width: 2),
+                                        color: Colors.blueGrey.shade400,
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding:  EdgeInsets.all( 10.r),
+                                        child: Text(detail.descList[index],maxLines: 3,
+                                          // overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                          softWrap: false,),
+                                      )),
+                                )),
                           ),
 
-                      ),
-                    ],),
+                        ),
+
+
+                        GestureDetector(
+                          onTap: () {
+                            detail.toggleUsesExpanded();
+                          },
+
+                          child: ExpandedTile(title:"Uses" ,isExp: detail.usesExpanded,),
+                        ),
+                        SizedBox(height: 10.h),
+                        Visibility(
+                          visible: detail.usesExpanded,
+                          child:  Container(
+                            height: detail.usesList.length*60,
+                            child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                // shrinkWrap: true,
+                                itemCount: detail.usesList.length,
+                                itemBuilder: (context, index) => Padding(
+                                  padding: EdgeInsets.all(5.h),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(color:Colors.blueGrey, width: 2),
+                                        color: Colors.blueGrey.shade400,
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Padding(
+                                        padding:  EdgeInsets.all( 10.r),
+                                        child: Text(detail.usesList[index],maxLines: 3,
+                                          // overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                          // softWrap: false,
+                                        ),
+                                      )),
+                                )),
+                          ),
+
+                        ),
+                      ],),
+                    ),
                   ),
                 ),
                 ]

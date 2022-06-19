@@ -86,7 +86,7 @@ class YieldOnionPage extends StatelessWidget {
                         },
                         child: Container(
                           height: 50,
-                          color:  Colors.blueGrey,
+                          color:  Colors.blueGrey.shade100,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(

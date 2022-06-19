@@ -1,26 +1,24 @@
 import 'package:agri_app/core/constants/constants.dart';
 import 'package:agri_app/core/models/cardModel.dart';
-import 'package:agri_app/ui/screens/pocketAreas/tomato/tomatoPage.dart';
-import 'package:agri_app/ui/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'onion/onionPage.dart';
-import 'pocketAreasVM.dart';
+import 'diseasesVM.dart';
 
-class PocketAreasPage extends StatelessWidget {
+
+class DiseasesTomatoPage extends StatelessWidget {
   final CardModel cardModel;
 
-  const PocketAreasPage({Key? key, required this.cardModel})
+  const DiseasesTomatoPage({Key? key, required this.cardModel})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return ChangeNotifierProvider(
-      create: (context) => PocketAreasProvider(), child:
-    Consumer<PocketAreasProvider>(
+      create: (context) => DiseasesTomatoProvider(), child:
+    Consumer<DiseasesTomatoProvider>(
         builder: (context, detail, child) {
           return Scaffold(
 
@@ -79,45 +77,7 @@ class PocketAreasPage extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(20.h),
 
-                    child:
-                    GridView.builder(
-                      itemCount: detail.cardModel.length,
-                      gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
 
-                        crossAxisCount: 2,
-                        childAspectRatio: 0.75,
-                        mainAxisSpacing: defaultPadding,
-                        crossAxisSpacing: defaultPadding,
-                      ),
-                      itemBuilder: (context, index) =>
-                          MainCard(
-                            cardModel: detail.cardModel[index],
-                            press: () {
-                              Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration:
-                                  const Duration(milliseconds: 500),
-                                  reverseTransitionDuration:
-                                  const Duration(milliseconds: 500),
-                                  pageBuilder: (context, animation,
-                                      secondaryAnimation) =>
-                                      FadeTransition(
-                                        opacity: animation,
-                                        child:index==0? OnionPage(
-                                          cardModel: detail.cardModel[index],
-
-                                        ):TomatoPage(
-                                          cardModel: detail.cardModel[index],
-
-                                        ),
-                                      ),
-                                ),
-                              );
-                            },
-                          ),
-                    ),
 
 
                   ),

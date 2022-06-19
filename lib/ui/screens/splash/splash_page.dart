@@ -8,10 +8,13 @@ import 'package:agri_app/ui/screens/weather/service/get_location_data.dart';
 import 'package:agri_app/ui/screens/weather/service/get_weather_data.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
+
+import '../../../core/constants/constants.dart';
 
 class SpalashPage extends StatefulWidget {
   const SpalashPage({Key? key}) : super(key: key);
@@ -76,45 +79,14 @@ class _SpalashPageState extends State<SpalashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
-            child: DefaultTextStyle(
-              style: TextStyle(
-                  color: Color.fromRGBO(242, 82, 135, 1),
-                  fontSize: 13,
-                  fontWeight: FontWeight.w700,
-                  height: 1,
-                  letterSpacing: 6),
-              child: AnimatedTextKit(
-                pause: Duration(milliseconds: 8),
-                isRepeatingAnimation: true,
-                repeatForever: true,
-                animatedTexts: [
-                  RotateAnimatedText('WEATHER'),
-                  RotateAnimatedText('WIND SPEED'),
-                  RotateAnimatedText('TEMPERATURE'),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          SizedBox(height: 330),
-          Center(
-            child: Lottie.asset(
-              'assets/lottie/rain.json',
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
-      ),
+      body: Container(
+        padding: EdgeInsets.all(20.h),
+    decoration:const BoxDecoration(
+    gradient: gradient,
+    ),
+      child: Center(child: Image.asset("assets/image/monogram.png"),),),
     );
   }
 }

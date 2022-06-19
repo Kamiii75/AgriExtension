@@ -109,7 +109,8 @@ class TomatoPage extends StatelessWidget {
                                         child:index==0? AreasTomatoPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ) :YieldTomatoPage(
+                                        )
+                                            :YieldTomatoPage(
                                           cardModel: detail.cardModel[index],
 
                                         ),

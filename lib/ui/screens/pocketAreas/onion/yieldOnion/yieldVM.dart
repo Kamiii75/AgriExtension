@@ -34,8 +34,8 @@ class YieldOnionProvider extends ChangeNotifier{
     '9',
     '10',
   ];
-  List<List<String>> tableDataDesc = [
-    [
+  List<String> tableDataDescH = [
+
       "Date/Time",
       "TRANSACTION\nID",
       "TRANSACTION\nDESCRIPTION",
@@ -43,7 +43,9 @@ class YieldOnionProvider extends ChangeNotifier{
       "CREDIT",
       "Available \nBalance",
       "status"
-    ],
+    ];
+  List<List<String>> tableDataDesc = [
+
     [
       "20/03/2022 \n11:43  PM",
       "9999999999",

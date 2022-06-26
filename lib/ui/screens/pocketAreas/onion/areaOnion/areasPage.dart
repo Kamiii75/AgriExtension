@@ -139,7 +139,7 @@ class _AreasOnionPageState extends State<AreasOnionPage> {
                               padding: const EdgeInsets.all(8),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: buildRows(detail.tableDataDesc.length,detail.tableDataDesc),
+                                // children: buildRows(detail.tableDataDesc.length,detail.tableDataDesc,context),
                               ),
                             ),
                           ),

@@ -75,127 +75,88 @@ class YieldTomatoPage extends StatelessWidget {
                 Expanded(
                   flex: 12,
                   child: SingleChildScrollView(
-                    child: Container(
-                      padding: EdgeInsets.all(20.h),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: defaultPadding,vertical: 5),
 
-
-                      child: Column(children: [
-
-                        GestureDetector(
-                          onTap: () {
-                            detail.toggleDescExpanded();
-                          },
-                          // child: Container(
-                          //   height: 50,
-                          //   decoration: BoxDecoration(
-                          //       color:  Colors.blueGrey.shade100,
-                          //     borderRadius: BorderRadius.circular(10.r)
-                          //   ),
-                          //
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.all(8.0),
-                          //     child: Container(
-                          //       height: 50,
-                          //       child: Padding(
-                          //         padding: const EdgeInsets.all(8.0),
-                          //         child:  Row(
-                          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //           children: <Widget>[
-                          //             const Flexible(
-                          //               flex: 4,
-                          //               child:  Text(
-                          //                 "Description",
-                          //                 style: TextStyle(
-                          //                     color: Colors.black,
-                          //                     fontWeight: FontWeight.bold,
-                          //                     fontSize: 16),
-                          //               ),
-                          //             ),
-                          //             Flexible(
-                          //               flex: 1,
-                          //               child: Icon(
-                          //                   detail.descExpanded
-                          //                       ? Icons.keyboard_arrow_up_outlined
-                          //                       : Icons.keyboard_arrow_down_outlined,
-                          //                   size: 25),
-                          //             )
-                          //           ],
-                          //         ),
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
-                          child: ExpandedTile(title:"Description" ,isExp: detail.descExpanded,),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF7F7F7).withOpacity(.2),
+                          borderRadius:const  BorderRadius.all(
+                            Radius.circular(5),
+                          ),
                         ),
-                        SizedBox(height: 10.h),
-                        Visibility(
-                          visible: detail.descExpanded,
-                          child:  Container(
-                            height: detail.descList.length*60,
-                            child: ListView.builder(
+
+
+
+                        child: Column(children: [
+
+                          GestureDetector(
+                            onTap: () {
+                              detail.toggleDescExpanded();
+                            },
+
+                            child: ExpandedTile(title:"Description" ,isExp: detail.descExpanded,),
+                          ),
+                          SizedBox(height: 10.h),
+                          Visibility(
+                            visible: detail.descExpanded,
+                            child:  Container(
+                              height: detail.descList.length*60,
+                              child: ListView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
+                                // shrinkWrap: true,
+                                  itemCount: detail.descList.length,
+                                  itemBuilder: (context, index) => Padding(
+                                    padding: EdgeInsets.all(5.h),
+                                    child: Container(
+
+                                        child: Padding(
+                                          padding:  EdgeInsets.all( 10.r),
+                                          child: Text(detail.descList[index],maxLines: 3,
+                                            // overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                            softWrap: false,),
+                                        )),
+                                  )),
+                            ),
+
+                          ),
+
+
+                          GestureDetector(
+                            onTap: () {
+                              detail.toggleUsesExpanded();
+                            },
+
+                            child: ExpandedTile(title:"Uses" ,isExp: detail.usesExpanded,),
+                          ),
+                          SizedBox(height: 10.h),
+                          Visibility(
+                            visible: detail.usesExpanded,
+                            child:  Container(
+                              height: detail.usesList.length*60,
+                              child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
-                              // shrinkWrap: true,
-                                itemCount: detail.descList.length,
-                                itemBuilder: (context, index) => Padding(
-                                  padding: EdgeInsets.all(5.h),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(5),
-                                        border: Border.all(color:Colors.blueGrey, width: 2),
-                                        color: Colors.blueGrey.shade400,
-                                        shape: BoxShape.rectangle,
-                                      ),
-                                      child: Padding(
-                                        padding:  EdgeInsets.all( 10.r),
-                                        child: Text(detail.descList[index],maxLines: 3,
-                                          // overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
-                                          softWrap: false,),
-                                      )),
-                                )),
+                                // shrinkWrap: true,
+                                  itemCount: detail.usesList.length,
+                                  itemBuilder: (context, index) => Padding(
+                                    padding: EdgeInsets.all(5.h),
+                                    child: Container(
+
+                                        child: Padding(
+                                          padding:  EdgeInsets.all( 10.r),
+                                          child: Text(detail.usesList[index],maxLines: 3,
+                                            // overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                            // softWrap: false,
+                                          ),
+                                        )),
+                                  )),
+                            ),
+
                           ),
-
-                        ),
-
-
-                        GestureDetector(
-                          onTap: () {
-                            detail.toggleUsesExpanded();
-                          },
-
-                          child: ExpandedTile(title:"Uses" ,isExp: detail.usesExpanded,),
-                        ),
-                        SizedBox(height: 10.h),
-                        Visibility(
-                          visible: detail.usesExpanded,
-                          child:  Container(
-                            height: detail.usesList.length*60,
-                            child: ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
-                              // shrinkWrap: true,
-                                itemCount: detail.usesList.length,
-                                itemBuilder: (context, index) => Padding(
-                                  padding: EdgeInsets.all(5.h),
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(5),
-                                        border: Border.all(color:Colors.blueGrey, width: 2),
-                                        color: Colors.blueGrey.shade400,
-                                        shape: BoxShape.rectangle,
-                                      ),
-                                      child: Padding(
-                                        padding:  EdgeInsets.all( 10.r),
-                                        child: Text(detail.usesList[index],maxLines: 3,
-                                          // overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
-                                          // softWrap: false,
-                                        ),
-                                      )),
-                                )),
-                          ),
-
-                        ),
-                      ],),
+                        ],),
+                      ),
                     ),
                   ),
                 ),

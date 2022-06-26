@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../widgets/expandedTile.dart';
 import 'diseasesVM.dart';
 
 
@@ -74,13 +75,508 @@ class DiseasesTomatoPage extends StatelessWidget {
                   ),
                 Expanded(
                   flex: 12,
+                  child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: defaultPadding,vertical: 5),
                   child: Container(
-                    padding: EdgeInsets.all(20.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF7F7F7).withOpacity(.2),
+                      borderRadius:const  BorderRadius.all(
+                        Radius.circular(5),
+                      ),
+                    ),
 
 
 
+                    child: Column(children: [
 
+
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleLateBlightOfTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Late Blight Of Tomato" ,isExp: detail.LateBlightOfTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.LateBlightOfTomatoExpanded,
+                        child:  Container(
+                          height: detail.LateBlightOfTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.LateBlightOfTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.LateBlightOfTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleLateBlightOfTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control measures" ,isExp: detail.ControlMeasuresTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.ControlMeasuresTomatoExpanded,
+                        child:  Container(
+                          height: detail.ControlMeasuresTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.ControlMeasuresTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.ControlMeasuresTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleFusariumWiltTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Fusarium Wilt" ,isExp: detail.FusariumWiltTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.FusariumWiltTomatoExpanded,
+                        child:  Container(
+                          height: detail.FusariumWiltTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.FusariumWiltTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.FusariumWiltTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleFUSARIUMCROWNANDROOTROTTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"FUSARIUM CROWN AND ROOT ROT" ,isExp: detail.FUSARIUMCROWNANDROOTROTTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.FUSARIUMCROWNANDROOTROTTomatoExpanded,
+                        child:  Container(
+                          height: detail.FUSARIUMCROWNANDROOTROTTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.FUSARIUMCROWNANDROOTROTTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.FUSARIUMCROWNANDROOTROTTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.togglePOWDERYMILDEWTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control" ,isExp: detail.POWDERYMILDEWControlTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.POWDERYMILDEWControlTomatoExpanded,
+                        child:  Container(
+                          height: detail.POWDERYMILDEWControlTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.POWDERYMILDEWControlTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.POWDERYMILDEWControlTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialSpotOfTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Bacterial spot of tomato" ,isExp: detail.BacterialSpotOfTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialSpotOfTomatoExpanded,
+                        child:  Container(
+                          height: detail.BacterialSpotOfTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialSpotOfTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialSpotOfTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialSpotOfTomatoControlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control" ,isExp: detail.BacterialSpotOfTomatoControlExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialSpotOfTomatoControlExpanded,
+                        child:  Container(
+                          height: detail.BacterialSpotOfTomatoControlList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialSpotOfTomatoControlList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialSpotOfTomatoControlList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialCankerOfTomatoControlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Bacterial canker of tomato" ,isExp: detail.BacterialCankerOfTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialCankerOfTomatoExpanded,
+                        child:  Container(
+                          height: detail.BacterialCankerOfTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialCankerOfTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialCankerOfTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialCankerOfTomatoControlControlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control" ,isExp: detail.BacterialCankerOfTomatoControlExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialCankerOfTomatoControlExpanded,
+                        child:  Container(
+                          height: detail.BacterialCankerOfTomatoControlList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialCankerOfTomatoControlList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialCankerOfTomatoControlList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialWiltOfTomatoExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Bacterial wilt of tomato " ,isExp: detail.BacterialWiltOfTomatoExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialWiltOfTomatoExpanded,
+                        child:  Container(
+                          height: detail.BacterialWiltOfTomatoList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialWiltOfTomatoList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialWiltOfTomatoList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleBacterialWiltOfTomatoControlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control" ,isExp: detail.BacterialWiltOfTomatoControlExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.BacterialWiltOfTomatoControlExpanded,
+                        child:  Container(
+                          height: detail.BacterialWiltOfTomatoControlList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.BacterialWiltOfTomatoControlList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.BacterialWiltOfTomatoControlList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleTomatoYellowLeafCurlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Tomato Yellow Leaf Curl" ,isExp: detail.TomatoYellowLeafCurlExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.TomatoYellowLeafCurlExpanded,
+                        child:  Container(
+                          height: detail.TomatoYellowLeafCurlList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.TomatoYellowLeafCurlList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.TomatoYellowLeafCurlList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          detail.toggleTomatoYellowLeafCurlControlExpanded();
+                        },
+
+                        child: ExpandedTile(title:"Control" ,isExp: detail.TomatoYellowLeafCurlControlExpanded,),
+                      ),
+                      SizedBox(height: 10.h),
+                      Visibility(
+                        visible: detail.TomatoYellowLeafCurlControlExpanded,
+                        child:  Container(
+                          height: detail.TomatoYellowLeafCurlControlList.length*60,
+                          child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              // shrinkWrap: true,
+                              itemCount: detail.TomatoYellowLeafCurlControlList.length,
+                              itemBuilder: (context, index) => Padding(
+                                padding: EdgeInsets.all(5.h),
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      border: Border.all(color:Colors.blueGrey, width: 2),
+                                      color: Colors.blueGrey.shade400,
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Padding(
+                                      padding:  EdgeInsets.all( 10.r),
+                                      child: Text(detail.TomatoYellowLeafCurlControlList[index],maxLines: 3,
+                                        // overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic),
+                                        // softWrap: false,
+                                      ),
+                                    )),
+                              )),
+                        ),
+
+                      ),
+                    ],),
                   ),
+                ),
+              ),
                 ),
                 ]
                 ),

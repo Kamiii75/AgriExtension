@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../widgets/buildTableStatic.dart';
+
 
 class YieldOnionPage extends StatelessWidget {
   final CardModel cardModel;
@@ -128,9 +130,20 @@ class YieldOnionPage extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                           child: Padding(
                             padding: const EdgeInsets.all(8),
+                            // child: TableStatic(columnWidths: const  {
+                            //
+                            //     0: FractionColumnWidth(.10),
+                            //     // 1: FractionColumnWidth(.15),
+                            //     // 2: FractionColumnWidth(.15),
+                            //     // 3: FractionColumnWidth(.15),
+                            //     // 4: FractionColumnWidth(.15),
+                            //     // 5: FractionColumnWidth(.15),
+                            //     // 6: FractionColumnWidth(.15),
+
+                            //   },tableHeader: detail.tableDataDescH,tableData: detail.tableDataDesc,),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: buildRows(detail.tableDataDesc.length,detail.tableDataDesc),
+                              children: buildRows(detail.tableDataDesc.length,detail.tableDataDesc,context),
                             ),
                           ),
                         ),

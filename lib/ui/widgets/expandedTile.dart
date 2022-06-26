@@ -11,7 +11,7 @@ class ExpandedTile extends StatelessWidget {
     return Container(
       height: 50,
       decoration: BoxDecoration(
-          color:  Colors.blueGrey.shade100,
+          color:  Colors.white.withOpacity(.1),
           borderRadius: BorderRadius.circular(10.r)
       ),
 
@@ -29,7 +29,7 @@ class ExpandedTile extends StatelessWidget {
                   child:  Text(
                     title,
                     style:const TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   ),
@@ -40,7 +40,8 @@ class ExpandedTile extends StatelessWidget {
                      isExp
                           ? Icons.keyboard_arrow_up_outlined
                           : Icons.keyboard_arrow_down_outlined,
-                      size: 25),
+                      size: 25,
+                  color: Colors.white,),
                 )
               ],
             ),

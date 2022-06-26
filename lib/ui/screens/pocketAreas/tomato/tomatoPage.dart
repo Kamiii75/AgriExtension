@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import 'areaTomato/areasPage.dart';
+import 'areaTomato/areasTomatoPage.dart';
+import 'diseasesTomato/diseasesPage.dart';
 
 
 class TomatoPage extends StatelessWidget {
@@ -110,7 +111,10 @@ class TomatoPage extends StatelessWidget {
                                           cardModel: detail.cardModel[index],
 
                                         )
-                                            :YieldTomatoPage(
+                                            :index==1?YieldTomatoPage(
+                                          cardModel: detail.cardModel[index],
+
+                                        ):DiseasesTomatoPage(
                                           cardModel: detail.cardModel[index],
 
                                         ),

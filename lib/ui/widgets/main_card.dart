@@ -43,7 +43,7 @@ class MainCard extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: SizedBox(
                 width: double.infinity,
                 child: Text(

@@ -1,6 +1,5 @@
 import 'package:agri_app/core/constants/constants.dart';
 import 'package:agri_app/core/models/cardModel.dart';
-import 'package:agri_app/ui/screens/pocketAreas/tomato/diseasesTomato/diseasesDetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -10,10 +9,11 @@ import '../../../../widgets/main_card.dart';
 import 'diseasesVM.dart';
 
 
-class DiseasesTomatoPage extends StatelessWidget {
+class DiseasesTomatoDetailPage extends StatelessWidget {
   final CardModel cardModel;
+  final List<String> cardModelList;
 
-  const DiseasesTomatoPage({Key? key, required this.cardModel})
+  const DiseasesTomatoDetailPage({Key? key, required this.cardModel, required this.cardModelList})
       : super(key: key);
 
   @override
@@ -79,44 +79,32 @@ class DiseasesTomatoPage extends StatelessWidget {
                   flex: 12,
                   child: Container(
                     padding: EdgeInsets.all(20.h),
-
-                    child:
-                    GridView.builder(
-                      itemCount: detail.cardModel.length,
-                      gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
-
-                        crossAxisCount: 3,
-                        childAspectRatio: 0.75,
-                        mainAxisSpacing: defaultPadding,
-                        crossAxisSpacing: defaultPadding,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF7F7F7).withOpacity(.2),
+                      borderRadius:const  BorderRadius.all(
+                        Radius.circular(defaultPadding * 1.25),
                       ),
-                      itemBuilder: (context, index) =>
-                          MainCard(
-                            cardModel: detail.cardModel[index],
-                            press: () {
-                              Navigator.push(
-                                context,
-                                PageRouteBuilder(
-                                  transitionDuration:
-                                  const Duration(milliseconds: 500),
-                                  reverseTransitionDuration:
-                                  const Duration(milliseconds: 500),
-                                  pageBuilder: (context, animation,
-                                      secondaryAnimation) =>
-                                      FadeTransition(
-                                        opacity: animation,
-                                        child:DiseasesTomatoDetailPage(
-                                          cardModel: detail.cardModel[index],
-                                          cardModelList: detail.mainStrings[index],
-
-                                        ),
-                                      ),
-                                ),
-                              );
-                            },
-                          ),
                     ),
+                  child: ListView.builder(
+                      
+                      itemCount: cardModelList.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: EdgeInsets.all(5.h),
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(color:Colors.blueGrey, width: 2),
+
+                            ),
+                            child: Padding(
+                              padding:  EdgeInsets.all( 10.r),
+                              child: Text(cardModelList[index],maxLines: 5,
+                                // overflow: TextOverflow.ellipsis,
+                                style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic,fontSize: 16),
+                                // softWrap: false,
+                              ),
+                            )),
+                      )),
 
 
                   ),

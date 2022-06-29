@@ -44,12 +44,20 @@ class DetailDistrictPage extends StatelessWidget {
                       ),
 
 
-                      title: Text(
-                        cardModel.title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .subtitle1!
-                            .copyWith(fontWeight: FontWeight.w600,color: Colors.white),
+                      title: Row(
+                        children: [
+                          CircleAvatar(radius: 22,child: Image.asset("assets/image/monogram.png")),
+                        const  SizedBox(width: 10,),
+                          CircleAvatar(radius: 20,child: Image.asset("assets/images/ext.png")),
+                          const  SizedBox(width: 10,),
+                          Text(
+                            cardModel.title,
+                            style: Theme.of(context)
+                                .textTheme
+                                .subtitle1!
+                                .copyWith(fontWeight: FontWeight.w600,color: Colors.white),
+                          ),
+                        ],
                       ),
 
 

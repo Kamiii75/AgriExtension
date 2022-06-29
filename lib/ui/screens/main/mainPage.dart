@@ -26,14 +26,19 @@ class MainPage extends StatelessWidget {
         ),
           child: Column(
             children: [
+             
               Expanded(
                 flex: 2,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top:30,
-                      right:30,
-                      child: Row(
+                child: SafeArea(
+                  child: Stack(
+                    children: [
+
+                      Row(children: [
+                        CircleAvatar(radius: 22,child: Image.asset("assets/image/monogram.png")),
+                       SizedBox(width: 10,),
+                        CircleAvatar(radius: 20,child: Image.asset("assets/images/ext.png")),
+                      ],),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
@@ -58,8 +63,8 @@ class MainPage extends StatelessWidget {
                           )
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Expanded(

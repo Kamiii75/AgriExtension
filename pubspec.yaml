@@ -90,6 +90,9 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/images/tomato/disease/
+    - assets/images/tomato/disorder/
+    - assets/images/tomato/insects/
     - assets/lottie/
     - assets/image/
   # fonts:

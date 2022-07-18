@@ -7,5 +7,7 @@ class TomatoProvider extends ChangeNotifier{
     CardModel(title: "Area", image: "assets/images/market_list.png"),
     CardModel(title: "Yield", image: "assets/images/crops.png"),
     CardModel(title: "Diseases", image: "assets/images/crops.png"),
+    CardModel(title: "Physiological Disorders", image: "assets/images/crops.png"),
+    CardModel(title: "Insects", image: "assets/images/crops.png"),
   ];
 }

@@ -10,43 +10,46 @@ class DiseasesTomatoProvider extends ChangeNotifier{
     mainStrings.add(LateBlightOfTomatoList);
     mainStrings.add(ControlMeasuresTomatoList);
     mainStrings.add(FusariumWiltTomatoList);
+
     mainStrings.add(FUSARIUMCROWNANDROOTROTTomatoList);
     mainStrings.add(POWDERYMILDEWTomatoList);
     mainStrings.add(POWDERYMILDEWControlTomatoList);
+
     mainStrings.add(BacterialSpotOfTomatoList);
     mainStrings.add(BacterialSpotOfTomatoControlList);
+
     mainStrings.add(BacterialCankerOfTomatoList);
     mainStrings.add(BacterialCankerOfTomatoControlList);
-    mainStrings.add(BacterialCankerOfTomatoControlList);
-    mainStrings.add(BacterialCankerOfTomatoControlList);
-    mainStrings.add(BacterialCankerOfTomatoControlList);
-    mainStrings.add(BacterialCankerOfTomatoControlList);
+
+
     mainStrings.add(BacterialWiltOfTomatoList);
     mainStrings.add(BacterialWiltOfTomatoControlList);
+
     mainStrings.add(TomatoYellowLeafCurlList);
     mainStrings.add(TomatoYellowLeafCurlControlList);
 
   }
 
   List<CardModel> cardModel = [
-    CardModel(title: "Late Blight Of Tomato", image: "assets/images/market_list.png"),
-    CardModel(title: "Control measures", image: "assets/images/crops.png"),
-    CardModel(title: "Fusarium Wilt", image: "assets/images/crops.png"),
+    CardModel(title: "Late Blight Of Tomato", image: "assets/images/tomato/disease/late_blight.png"),
+    CardModel(title: "Control measures", image: "assets/images/tomato/disease/late_blight_cntl.png"),
+    CardModel(title: "Fusarium Wilt", image: "assets/images/tomato/disease/fusarium_wilt.png"),
 
-    CardModel(title: "FUSARIUM CROWN AND ROOT ROT", image: "assets/images/market_list.png"),
-    CardModel(title: "Control", image: "assets/images/crops.png"),
+    CardModel(title: "FUSARIUM CROWN AND ROOT ROT", image: "assets/images/tomato/disease/fusarium_crr.png"),
+    CardModel(title: "POWDERY MILDEW", image: "assets/images/tomato/disease/powdery_mildev.png"),
+    CardModel(title: "POWDERY MILDEW Control", image: "assets/images/tomato/disease/powdery_mildev_c.png"),
 
-    CardModel(title: "Bacterial Spot Of Tomato", image: "assets/images/market_list.png"),
-    CardModel(title: "Control", image: "assets/images/crops.png"),
+    CardModel(title: "Bacterial Spot Of Tomato", image: "assets/images/tomato/disease/bacterial_spot.png"),
+    CardModel(title: "Spot Control", image: "assets/images/tomato/disease/bacterial_spot_c.png"),
 
-    CardModel(title: "Bacterial Canker Of Tomato", image: "assets/images/market_list.png"),
-    CardModel(title: "Control", image: "assets/images/crops.png"),
+    CardModel(title: "Bacterial Canker Of Tomato", image: "assets/images/tomato/disease/bacterial_canker.png"),
+    CardModel(title: "Canker Control", image: "assets/images/tomato/disease/bacterial_canker.png"),
 
-    CardModel(title: "Bacterial Wilt Of Tomato", image: "assets/images/market_list.png"),
-    CardModel(title: "Control", image: "assets/images/crops.png"),
+    CardModel(title: "Bacterial Wilt Of Tomato", image: "assets/images/tomato/disease/bacterial_wilt.png"),
+    CardModel(title: "Wilt Control", image: "assets/images/tomato/disease/bacterial_wilt_c.png"),
 
-    CardModel(title: "Tomato Yellow Leaf Curl", image: "assets/images/market_list.png"),
-    CardModel(title: "Control", image: "assets/images/crops.png"),
+    CardModel(title: "Tomato Yellow Leaf Curl", image: "assets/images/tomato/disease/leaf_curl.png"),
+    CardModel(title: "Control", image: "assets/images/tomato/disease/leaf_curl_c.png"),
   ];
 
   List<List<String>> mainStrings=[

@@ -43,7 +43,7 @@ class MainCard extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: SizedBox(
                 width: double.infinity,
                 child: Text(
@@ -52,7 +52,7 @@ class MainCard extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .subtitle1!
-                      .copyWith(fontWeight: FontWeight.w600,color: Colors.white),
+                      .copyWith(fontWeight: FontWeight.w600,color: Colors.white,fontSize: 14.sp),
                 ),
               ),
             ),

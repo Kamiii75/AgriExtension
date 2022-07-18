@@ -90,20 +90,14 @@ class DiseasesTomatoDetailPage extends StatelessWidget {
                       itemCount: cardModelList.length,
                       itemBuilder: (context, index) => Padding(
                         padding: EdgeInsets.all(5.h),
-                        child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(color:Colors.blueGrey, width: 2),
-
-                            ),
-                            child: Padding(
-                              padding:  EdgeInsets.all( 10.r),
-                              child: Text(cardModelList[index],maxLines: 5,
-                                // overflow: TextOverflow.ellipsis,
-                                style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic,fontSize: 16),
-                                // softWrap: false,
-                              ),
-                            )),
+                        child: Padding(
+                          padding:  EdgeInsets.all( 10.r),
+                          child: Text(cardModelList[index],maxLines: 5,
+                            // overflow: TextOverflow.ellipsis,
+                            style: TextStyle(color: Colors.white,fontStyle: FontStyle.italic,fontSize: 16),
+                            // softWrap: false,
+                          ),
+                        ),
                       )),
 
 

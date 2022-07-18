@@ -1,5 +1,6 @@
 import 'package:agri_app/core/constants/constants.dart';
 import 'package:agri_app/core/models/cardModel.dart';
+import 'package:agri_app/ui/screens/pocketAreas/tomato/physiologicalDisorderTomato/physiologicalDisorderTomatoPage.dart';
 import 'package:agri_app/ui/screens/pocketAreas/tomato/tomatoVM.dart';
 import 'package:agri_app/ui/screens/pocketAreas/tomato/yieldTomato/yieldPage.dart';
 import 'package:agri_app/ui/widgets/main_card.dart';
@@ -9,6 +10,7 @@ import 'package:provider/provider.dart';
 
 import 'areaTomato/areasTomatoPage.dart';
 import 'diseasesTomato/diseasesPage.dart';
+import 'insectsTomato/insectsTomatoPage.dart';
 
 
 class TomatoPage extends StatelessWidget {
@@ -114,7 +116,13 @@ class TomatoPage extends StatelessWidget {
                                             :index==1?YieldTomatoPage(
                                           cardModel: detail.cardModel[index],
 
-                                        ):DiseasesTomatoPage(
+                                        ):index==2?DiseasesTomatoPage(
+                                          cardModel: detail.cardModel[index],
+
+                                        ):index==3?PhysiologicalDisorderPage(
+                                          cardModel: detail.cardModel[index],
+
+                                        ):InsectsTomatoPage(
                                           cardModel: detail.cardModel[index],
 
                                         ),

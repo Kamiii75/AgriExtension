@@ -176,7 +176,7 @@ class AreasTomatoProvider extends ChangeNotifier{
   ];
   List<String> transplantationList=[
 "Dip the roots of seedling in solution prepared of Mancozeb Or Diathane+Metalyxal Or Alliete (Fosetyle Aluminium) @ 05 gm/L.",
-"Flood the insecticide like Larsban, Chlorofypos, Lambda or Radiant/Fipronil during transplantation for the protection of seedlings from insects attacks.",
+"Flood the insecticide like Larsban, Chlorofypos, Lambda or Radiant/Fipronil during transplantation for the protection of seedlings from insectsTomato attacks.",
 "Apply Density (Azoxystrobin+Fludoxonil+Mefenoxam) a broad spectrum fungicides used for treating soil born diseases during first irrigation.",
 
   ];
